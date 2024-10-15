@@ -45,7 +45,7 @@ def dbDemo():
 # This is just to see the contents of the DB
     global outp
     outp=""
-    
+
     # Unpacking the credentials available in the DBConfig method
     creds = DBConfig.get_credentials()
     mydb = mysql.connector.connect(
@@ -80,7 +80,7 @@ def dbInsert():
 # This function is to insert records in the database'
     global outp
     outp=""
-    
+
     # Unpacking the credentials available in the DBConfig method
     creds = DBConfig.get_credentials()
     mydb = mysql.connector.connect(
@@ -121,7 +121,8 @@ def dbInsert():
 
     mydb.close()     ## Finished; Close the DB
     outp += "<p>I am done inserting<p>"
-
+    outp += "<p>Database viewable at <a href=\"./showDB\"><u>check the DB</u></a><p>"
+    
 
 ### The following is the router ###
 
