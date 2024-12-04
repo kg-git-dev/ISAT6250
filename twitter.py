@@ -358,6 +358,7 @@ def view_all_messages(environ, start_response):
                 content += "</ul>"
             else:
                 content = f"<p>No messages found for Topic {topic_id}.</p>"
+            content+= f"<p><a href='/view_topic?topic_id={topic_id}'>Go back</a>"
 
             status = '200 OK'
         except Exception as e:
