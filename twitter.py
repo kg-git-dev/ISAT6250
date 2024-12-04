@@ -306,6 +306,7 @@ def unsubscribe(environ, start_response):
 
         # Create a response to update the cookie
         content = f"<p>Unsubscribed from Topic {topic_id} successfully.</p>"
+        content += '<p><a href="/">Go back</a></p>'
 
         status = '200 OK'
         response_headers = [
