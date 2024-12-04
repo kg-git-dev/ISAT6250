@@ -250,7 +250,7 @@ def subscribe(environ, start_response):
         cookie = SimpleCookie(environ.get('HTTP_COOKIE', ''))
         subscribed_topics = set()
 
-        if 'subscribed_topics' in cookie:
+        if 'subscribed_topics' in cookie and cookie['subscribed_topics'].value.strip():
             subscribed_topics = set(map(int, cookie['subscribed_topics'].value.split(',')))
 
         # Add the new topic to the set of subscribed topics
